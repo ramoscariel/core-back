@@ -8,7 +8,7 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const [posts] = await db.query(
-      "SELECT post_id, title , DATE(creation_time) creation_time, author_id FROM posts WHERE parent_post_id IS NULL",
+      "SELECT post_id, title , DATE(creation_time) creation_time, author_id, updated_count FROM posts WHERE parent_post_id IS NULL",
       []
     );
 
